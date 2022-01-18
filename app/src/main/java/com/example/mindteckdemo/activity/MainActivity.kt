@@ -53,12 +53,8 @@ class MainActivity : AppCompatActivity() {
             // triggered when you select a new page
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                Toast.makeText(this@MainActivity,"$position",Toast.LENGTH_SHORT).show()
                 var list=ConvertorClass.fromStringToArrayList(catList[position].subcat_list)
                 subcatAdapter.setList(list)
-                rvSubCat.adapter=subcatAdapter
-                var subcatList=ConvertorClass.fromStringToArrayList(catList[position].subcat_list)
-                subcatAdapter.setList(subcatList)
                 rvSubCat.adapter=subcatAdapter
             }
 
@@ -78,6 +74,9 @@ class MainActivity : AppCompatActivity() {
                     categoryAdapter.setList(catList)
                     view_pager2.adapter = categoryAdapter
                     spring_dots_indicator.setViewPager2(view_pager2)
+                    var subcatList=ConvertorClass.fromStringToArrayList(catList[0].subcat_list)
+                    subcatAdapter.setList(subcatList)
+                    rvSubCat.adapter=subcatAdapter
                 }else{
                     mainLayout.visibility=View.GONE
                     txtNoData.visibility=View.VISIBLE
