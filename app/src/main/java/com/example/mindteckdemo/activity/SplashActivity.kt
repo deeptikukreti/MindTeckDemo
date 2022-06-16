@@ -21,7 +21,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
-
+/*add this new line*/
 class SplashActivity : AppCompatActivity() {
     private lateinit var catViewModel: CategoryViewModel
 
